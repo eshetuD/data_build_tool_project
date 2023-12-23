@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: vehicle_data_src
+    description: "A database keeps the record of vehicle and trajectory information"
+    database: vehicle_data
+    schema: public
+    tables:
+      - name: vehicle_track
+        description: "This table keeps the vehicle information"
+        columns:
+          - name: track_id
+            description: 'A primary key for this table'
+            tests:
+              - unique
+              - not_null
+      - name: trajectory_info
+        description: "This table keeps the trajectory information"
